@@ -30,7 +30,7 @@ This script serves as the core utility module for all data loading, preprocessin
 
 ---
 
-## ⚙️ Core Arguments in Runner Scripts
+## ⚙️ Core Arguments
 
 When executing the baseline scripts (`ASGD_ray_baselines.py` or `randomASGD_ray_baselines.py`), the following arguments dictate the experiment's behavior:
 
