@@ -30,23 +30,6 @@ This script serves as the core utility module for all data loading, preprocessin
 
 ---
 
-## ⚡ Core Implementations
-
-Both files implement different synchronization barriers and scheduling techniques for distributed ASGD:
-* `pure`: Vanilla Asynchronous SGD.
-* * `waiting`: ASGD with buffer (waits for $b$ gradient updates before applying them).
-* `random`: Randomly pull gradients from workers.
-* `random_waiting`: Random ASGD with buffer.
-* `shuffle`: A shuffle-based worker trigger version of ASGD.
-* `shuffle_waiting`: Shuffle ASGD with buffer.
-  
-**System Features:**
-* **Ray Actors:** Uses a centralized Parameter Server (`RayServer`) and multiple remote Workers (`RayWorker`).
-* **Delay Simulation (`--slow-delay` or `--slow-delay-list`):** Introduces artificial sleep times globally or locally to evaluate how staleness (gradient delay) affects the parameter server's convergence.
-* **Loss Function  (`--loss` and `--q`):** Support Cross-Entropy loss and q-norm hinge loss which is (q-1,L)-Holder continous.
-
----
-
 ## ⚙️ Core Arguments in Runner Scripts
 
 When executing the baseline scripts (`ASGD_ray_baselines.py` or `randomASGD_ray_baselines.py`), the following arguments dictate the experiment's behavior:
