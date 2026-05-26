@@ -32,7 +32,7 @@ This script serves as the core utility module for all data loading, preprocessin
 
 ## ⚙️ Core Arguments
 
-When executing the baseline scripts (`ASGD_ray_baselines.py` or `randomASGD_ray_baselines.py`), the following arguments dictate the experiment's behavior:
+When executing the baseline scripts (`ASGD_Stab_Gen.py` or `ASGD_Gen_Heter.py`), the following arguments dictate the experiment's behavior:
 
 ### Data & Model Configuration
 *   `--dataset`: Name of the dataset to run (e.g., `mnist`, `cifar10`, `rcv1`, `w1a`).
@@ -68,9 +68,7 @@ When executing the baseline scripts (`ASGD_ray_baselines.py` or `randomASGD_ray_
 !pip install torch ray numpy pandas matplotlib
 
 **2. Running the Stability Experiment:**
-### Example: Train on MNIST using different number of workers with "Pure ASGD".
 !python ASGD_Stab_Gen.py --ASGD-type pure --wait-b 1 --dataset mnist --model fcnet_mnist --loss ce --lr 5e-4 --lr-type constant --iterations 20000 --eval-interval 2000 --batch-size 4 --n-pairs 5 --num-samples 200 --num-workers-list 1,2,4,8,16,32 --repeats 1 --seed-base 43 --device cuda
 
 **3. Running the Non-IID Experiment:**
-### Example: Train on MNIST using 10 workers with "Pure ASGD With Waiting" under heterogeneous label distribution and calculation speed.
 !python ASGD_Gen_Heter.py --ASGD-type waiting --wait-b 4 --dataset mnist --model linear_mnist --loss ce --lr 1e-3 --lr-type constant --iterations 10000 --eval-interval 2000 --batch-size 4 --num-samples 200 --num-workers-list 10 --slow-delay-list 0,0.05,0.15,0.25,0.35,0.45,0.55 --repeats 1--device cuda
