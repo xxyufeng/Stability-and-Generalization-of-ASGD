@@ -54,7 +54,7 @@ When executing the baseline scripts (`ASGD_Stab_Gen.py` or `ASGD_Gen_Heter.py`),
     *   `pure`: Vanilla Asynchronous update (no synchronization barriers).
     *   `random`: Random worker pulls scheme.
     *   `shuffle`: Shuffle worker pulls scheme.
-    *   `waiting` / `random_waiting` / `shuffle_waiting`: Parameter Server waits for a specific bounded count of gradients before doing an averaged update step.
+    *   `waiting` / `random_waiting`: Parameter Server waits for a specific bounded count of gradients before doing an averaged update step.
 *   `--num-workers-list`: Specify single or multiple parallel worker capacities to test (e.g., `"1,4,8,16"` tests the system independently over 1, 4, 8, and 16 worker setups).
 *   `--wait-b`: Defines the batch buffer constraint for algorithms initialized with a `waiting` flag.
 *   `--slow-delay` / `--slow-delay-list`: Simulates stragglers by sleeping for $X$ seconds forcefully in slower workers.
