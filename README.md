@@ -35,7 +35,7 @@ This script serves as the core utility module for all data loading, preprocessin
 When executing the baseline scripts (`ASGD_Stab_Gen.py` or `ASGD_Gen_Heter.py`), the following arguments dictate the experiment's behavior:
 
 ### Data & Model Configuration
-*   `--dataset`: Name of the dataset to run (e.g., `mnist`, `cifar10`, `rcv1`, `w1a`).
+*   `--dataset`: Name of the dataset to run (e.g., `mnist`,`rcv1`).
 *   `--dataset-path`: Destination path for downloading and parsing datasets. Default is `./data`.
 *   `--model`: Name of the model mapping to `dataset_and_model.py` string literals (e.g., `fcnet_mnist`, `resnet20_cifar10`, `linear_rcv1`).
 *   `--loss`: Loss function choice. Options: `mse`, `ce`, `hingeloss`.
